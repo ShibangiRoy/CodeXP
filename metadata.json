@@ -1,0 +1,6 @@
+{
+  "name": "CodeXP",
+  "description": "Interactive personalized coding education platform with tailored learning paths for Python, JavaScript, Java, C++, Linux, C, HTML, CSS, and MySQL.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

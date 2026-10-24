@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeXP</title>
+    <meta name="description" content="Interactive personalized coding education platform with tailored learning paths for Python, JavaScript, Java, C++, Linux, C, HTML, CSS, and MySQL." />
+    <meta property="og:title" content="CodeXP" />
+    <meta property="og:description" content="Interactive personalized coding education platform with tailored learning paths for Python, JavaScript, Java, C++, Linux, C, HTML, CSS, and MySQL." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      (function() {
+        try {
+          var mode = localStorage.getItem("codexp_theme_mode") || "light";
+          var b = Number(localStorage.getItem("codexp_brightness")) || 100;
+          b = Math.min(100, Math.max(50, b));
+          var root = document.documentElement;
+          root.classList.remove("theme-light", "theme-dim", "theme-dark", "theme-night");
+          root.classList.add("theme-" + mode);
+          root.setAttribute("data-theme", mode);
+          root.style.setProperty("--screen-brightness", b + "%");
+          root.style.setProperty("--screen-dim-opacity", "" + Math.max(0, (100 - b) * 0.009));
+          root.style.setProperty("--brightness-level", "" + (b / 100));
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

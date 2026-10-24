@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "User profile with learning state, daily streak, and email verification status",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The user auth UID" },
+        "email": { "type": "string", "format": "email", "description": "User email address" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "emailVerified": { "type": "boolean", "description": "Whether the email is verified" },
+        "streakCount": { "type": "number", "description": "Consecutive days streak count" },
+        "lastActiveDate": { "type": "string", "description": "Last date user completed a lesson (YYYY-MM-DD)" },
+        "activeDates": { "type": "array", "description": "Dates when user completed at least one lesson" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Update timestamp" }
+      },
+      "required": ["uid", "email", "emailVerified", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "Stores user personal profile, streak records, and verification status"
+    }
+  }
+}
